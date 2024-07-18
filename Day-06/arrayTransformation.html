@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Array transformation through array methods</h1>
+    <input type="number" id="value">
+    <button onclick="submitValue()">Submit</button>
+    <div class="container">
+        <div class="col">
+            <h3>Array through map</h3>
+            <ul id="arrayMap">
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Array through filter</h3>
+            <ul id="arrayFilter">
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Array value reduce</h3>
+            <ul id="arrayReduce">
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        const myArray = []
+        function submitValue() {
+
+            const value = document.getElementById('value').value
+            myArray.push(value)
+            const arrayMap = document.getElementById('arrayMap')
+
+
+
+            const arrayReduce = document.getElementById('arrayReduce')
+
+            arrayMap.innerHTML = myArray.map((num) => {
+                return `<li>${num}</li>`
+            }).join('');
+
+            const uniqueArray = myArray.filter((num, index) => myArray.indexOf(num) === index);
+
+            console.log(uniqueArray)
+
+            const arrayFilter = document.getElementById('arrayFilter');
+            arrayFilter.innerHTML = uniqueArray.map(num => `<li>${num}</li>`).join('');
+
+            const sum = uniqueArray.reduce((acc, value) => acc + parseInt(value), 0);
+            arrayReduce.innerHTML = `Sum: ${sum}`
+        }
+
+    </script>
+</body>
+
+</html>

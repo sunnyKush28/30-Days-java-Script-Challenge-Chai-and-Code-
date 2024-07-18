@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Array manipulation</h1>
+    <form>
+        <input type="text" id="arrayInput">
+        <button type="submit">Submit</button>
+
+    </form><br>
+    <button onclick="removelastvalue()">POP-Remove last element</button>
+    <button onclick="removeFirstvalue()">SHIFT-Remove first element</button>
+    <br>
+    <input type="number" id="unshift">
+    <button onclick="unShiftvalue()">UnSHIFT-Add first element</button>
+
+
+    <ul id="array">
+    </ul>
+    <script>
+        const form = document.querySelector('form')
+        let myArray = [];
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const inputValue = document.querySelector('#arrayInput').value
+            if (inputValue == "") {
+                return alert("Please insert the value")
+            }
+
+            if (isNaN(inputValue)) return alert("value is not a number")
+            myArray.push(inputValue)
+
+
+            const arrayDisplay = document.getElementById('array')
+
+            arrayDisplay.innerHTML = myArray.map((num) => {
+                return `<li>${num}</li>`
+            }).join('');
+
+        })
+
+
+        function removelastvalue() {
+
+            myArray.pop()
+
+            const arrayDisplay = document.getElementById('array')
+
+            arrayDisplay.innerHTML = myArray.map((num) => {
+                return `<li>${num}</li>`
+            }).join('');
+        }
+
+        function removeFirstvalue() {
+
+            myArray.shift()
+
+            const arrayDisplay = document.getElementById('array')
+
+            arrayDisplay.innerHTML = myArray.map((num) => {
+                return `<li>${num}</li>`
+            }).join('');
+        }
+
+        function unShiftvalue() {
+            let value = document.getElementById("unshift").value
+            myArray.unshift(value)
+
+            const arrayDisplay = document.getElementById('array')
+
+            arrayDisplay.innerHTML = myArray.map((num) => {
+                return `<li>${num}</li>`
+            }).join('');
+        }
+    </script>
+</body>
+
+</html>
