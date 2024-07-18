@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Array Manipulation</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>2D Array Manipulation</h1>
+
+    <form id="addElementForm">
+        <label for="rowInput">Row:</label>
+        <input type="number" id="rowInput" name="rowInput" required>
+
+        <label for="colInput">Column:</label>
+        <input type="number" id="colInput" name="colInput" required>
+
+        <label for="valueInput">Value:</label>
+        <input type="text" id="valueInput" name="valueInput" required>
+
+        <button type="submit">Add/Update Element</button>
+    </form>
+
+    <h2>2D Array</h2>
+    <table id="arrayTable"></table>
+
+    <script>
+
+        let array2D = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+
+        function displayArray2D() {
+            const table = document.getElementById('arrayTable');
+            table.innerHTML = '';
+
+            array2D.forEach(row => {
+                const tr = document.createElement('tr');
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                });
+                table.appendChild(tr);
+            });
+        }
+
+        displayArray2D();
+
+
+        const form = document.getElementById('addElementForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const row = parseInt(document.getElementById('rowInput').value);
+            const col = parseInt(document.getElementById('colInput').value);
+            const value = document.getElementById('valueInput').value;
+
+
+            if (row >= 0 && row < array2D.length && col >= 0 && col < array2D[0].length) {
+
+                array2D[row][col] = value;
+
+
+                displayArray2D();
+            } else {
+                alert('Row or column is out of bounds');
+            }
+        });
+    </script>
+</body>
+
+</html>
