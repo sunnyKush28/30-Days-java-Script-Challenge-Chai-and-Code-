@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Fira Sans Condensed", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin: 12px;
+        }
+
+        .myclass {
+            font-size: 20px;
+            background-color: rgb(122, 61, 178);
+            border-radius: 25px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white">
+    <div class="container-fluid text-center">
+        <div class="container">
+            <div class="row d-flex text-center my-3">
+                <div class="col m-auto">
+                    <h1>Welcome to 30 days JS Challenge</h1>
+                    <h3>Activity-1 -DOMManipulation</h3>
+                </div>
+            </div>
+
+
+
+            <div class="row my-2">
+                <div class="col">
+                    <h3>Change Content through ID</h3>
+                    <h4 id="content1">Content Change on click Button1</h4>
+                    <button class="btn btn-outline-danger" onclick="changeContent1()">Button1</button>
+                </div>
+                <div class="col">
+                    <h3>Change Content through CLASS</h3>
+                    <h4 class="content2">Content Change on click Button2</h4>
+                    <button class="btn btn-outline-danger" onclick="changeContent2()">Button2</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container my-2">
+            <div class="row d-flex text-center my-3">
+                <div class="col m-auto">
+
+                    <h3>Activity-2 & 3 - Append AND Remove Element</h3>
+                </div>
+            </div>
+
+
+
+            <div class="row my-2">
+                <div class="col">
+
+                    <h3>Append AND Remove DIV</h3>
+                    <div id="append">Click ADD DIV for Append Div here</div>
+                    <button class="btn btn-outline-danger" onclick="createElement1()">ADD DIV</button>
+                    <button class="btn btn-outline-danger" onclick="removeElement1()">REMOVE DIV</button>
+                </div>
+                <div class="col">
+                    <h3>Append AND Remove li</h3>
+                    <h5>li append here on click Add li</h5>
+                    <ul id="li"></ul>
+                    <button class="btn btn-outline-danger" onclick="createElement2()">ADD LI</button>
+                    <button class="btn btn-outline-danger" onclick="removeElement2()">Remove Li</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- //Activity-4 -->
+        <div class="container my-2">
+            <div class="row d-flex text-center my-3">
+                <div class="col m-auto">
+
+                    <h3>Activity-4 - Attributes and classes</h3>
+                </div>
+            </div>
+
+
+
+            <div class="row my-5">
+                <div class="col">
+
+                    <h3>Change SRC Attribute</h3>
+                    <img id="img" src="./pngegg (7).png" alt="" class="w-25 mx-auto">
+                    <button class="btn btn-outline-danger" onclick="changeImg()">Change Image</button>
+
+                </div>
+                <div class="col">
+                    <h3>Add and remove Class</h3>
+                    <div id="element">Clicke on button to Add/Remove Class</div>
+
+                    <button class="btn btn-outline-danger" onclick="addClass()">ADD Class</button>
+                    <button class="btn btn-outline-danger" onclick="removeClass()">Remove Class</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- //Activity-5 -->
+        <div class="container my-2">
+            <div class="row d-flex text-center my-3">
+                <div class="col m-auto">
+
+                    <h3>Activity-5 - AddEventListener</h3>
+                </div>
+            </div>
+
+
+
+            <div class="row my-5">
+                <div class="col">
+
+                    <h3>Change Paragraph Content</h3>
+                    <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eos aspernatur eius
+                        cumque at pariatur nostrum, tenetur quos dolorum harum sapiente nam eveniet similique, suscipit
+                        iure, ex odio eligendi quas!</p>
+                    <button class="btn btn-outline-danger" id="btn1">Change Content</button>
+
+                </div>
+                <div class="col" id="mouse" style="border: 2px solid white;border-radius:10px;">
+                    <h3 class="my-5">Change Border Color On Hover</h3>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./DomManipulation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
