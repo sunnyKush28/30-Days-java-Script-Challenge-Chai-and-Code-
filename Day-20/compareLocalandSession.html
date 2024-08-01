@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="clearStorage()">Claer Storage local and session</button>
+    <script>
+        function saveInLocalSession(key, value) {
+            localStorage.setItem(key, value);
+            sessionStorage.setItem(key, value);
+
+            const localValue = localStorage.getItem(key);
+            const sessionValue = sessionStorage.getItem(key);
+
+            console.log(`Value in localStorage: ${localValue}`);
+            console.log(`Value in sessionStorage: ${sessionValue}`);
+
+        }
+        saveInLocalSession("name", "sunny")
+
+        const clearStorage = () => {
+            localStorage.clear()
+            sessionStorage.clear()
+            // Verify if localStorage is empty
+            const isLocalStorageEmpty = localStorage.length === 0;
+
+            // Verify if sessionStorage is empty
+            const isSessionStorageEmpty = sessionStorage.length === 0;
+
+            // Log the verification results
+            console.log(`Is localStorage empty? ${isLocalStorageEmpty}`);
+            console.log(`Is sessionStorage empty? ${isSessionStorageEmpty}`);
+        }
+
+
+    </script>
+</body>
+
+</html>

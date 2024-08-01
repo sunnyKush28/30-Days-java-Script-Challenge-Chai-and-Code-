@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" name="name">
+        <input type="email" name="email">
+        <button type="submit">Submit</button>
+
+    </form>
+    <ul id="data">
+
+    </ul>
+    <script>
+        window.onload = () => {
+            const dataFromSessionStorage = JSON.parse(sessionStorage.getItem("myformobject"))
+            if (dataFromSessionStorage) {
+                const showData = document.getElementById('data')
+                for (let key in dataFromSessionStorage) {
+                    const li = document.createElement('li')
+
+                    showData.appendChild(li)
+                    li.innerHTML = `${key}: ${dataFromSessionStorage[key]}`
+                }
+            }
+
+        }
+
+        const form = document.querySelector('form')
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const myFormObj = {}
+            const formData = new FormData(form)
+
+            for (let [key, value] of formData.entries()) {
+                myFormObj[key] = value
+            }
+            console.log(myFormObj)
+            sessionStorage.setItem("myformobject", JSON.stringify(myFormObj))
+
+        })
+        sessionStorage.setItem("data", "hello sessionstorage")
+        console.log(sessionStorage.getItem("data"))
+
+        const myObj = {
+            name: "sunny",
+            email: "sunnyacro11@gmail.com"
+        }
+
+        sessionStorage.setItem("Myobj", JSON.stringify(myObj))
+        const dataFromSessionStorage = JSON.parse(sessionStorage.getItem("Myobj"))
+        console.log(dataFromSessionStorage)
+
+
+    </script>
+</body>
+
+</html>
