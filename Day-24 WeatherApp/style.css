@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gupter:wght@400;500;700&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+
+
+}
+body{
+    background-image: url('https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    flex-direction: column;
+    
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;    
+    background-color: rgba(125, 218, 255, 0.521);
+    flex-direction: column;
+    padding: 1% 2%;    
+    border-radius: 10px;
+    opacity: 0;                  /* Start fully transparent */
+    transform: translateY(30px); /* Start slightly below the final position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in animation */
+}
+
+.container h1{
+    font-weight: 500;
+    font-size: 4vw;
+    margin: 2%;
+    
+}
+
+.container input{
+    width: 100%;
+    height: 20%;
+    border: none;
+    border-radius: 5px;
+    padding: 3%;
+    font-size: 1vw;
+
+}
+
+.container input[type=text]{
+    padding: 3% 5%;
+    font-weight: 400;
+}
+
+#searchButton{    
+    border: none;
+    margin-top: 3%;
+    padding: 1.5% 5%;
+    border-radius: 25px;
+    font-size: 1.2vw;
+    font-weight: 500;
+    background-color: rgb(24, 165, 132);
+
+}
+
+.container .weather-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 3%;
+    text-align: center;
+    
+
+}
+.container .weather-info h2{
+    font-weight: 700;
+    font-size: 2vw;
+    
+}
+
+.container .weather-info p{
+    font-weight: 400;
+    font-size: 1.2vw;
+
+}
+
+.row{
+    width: 80%;
+    
+}
+.weaterforcast{
+    display: flex;
+    flex-direction: row;
+   
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+   overflow-x: auto;
+    gap:2%;
+    
+    }
+
+
+.weaterforcast ul{
+    width: 150px;
+    white-space: nowrap;    
+    text-overflow: ellipsis; /* Adds "..." if the text overflows */
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color:  rgba(125, 218, 255, 0.521);
+    padding: 2%;
+    gap:2%;
+    border-radius: 10px;
+    opacity: 0;                  /* Start fully transparent */
+    transform: translateY(30px); /* Start slightly below the final position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in animation */
+}
+
+.weaterforcast ul li{
+    display:inline-block;
+    font-size: 1vw;
+    font-weight: 500;
+    opacity: 0;                  /* Start fully transparent */
+    transform: translateY(30px); /* Start slightly below the final position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in animation */
+    
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;               /* End fully visible */
+        transform: translateY(0); /* End in the final position */
+    }
+}
+
+.weaterforcast ul li h3{
+    font-weight: 800;
+}
+
+.weaterforcast ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.weaterforcast ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.weaterforcast ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.weaterforcast ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
