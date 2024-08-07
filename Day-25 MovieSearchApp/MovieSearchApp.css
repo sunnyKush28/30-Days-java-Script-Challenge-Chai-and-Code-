@@ -1,0 +1,217 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-color: rgb(5, 14, 21);
+    color:white;
+    padding: 3% 10%;
+    
+}
+
+
+
+.container{
+    width: 100%;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 3px solid rgba(244, 175, 26, 0.211) ;
+    
+}
+
+.container .collectionMovies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap:1%;
+}
+
+.container .collectionMovies .movieData{
+    flex:1 1 var(--item-width);
+    max-width: var(--item-width);
+    margin: 0.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align:center;
+    margin: 2%;
+    opacity: 0;                  /* Start fully transparent */
+    transform: translateY(30px); /* Start slightly below the final position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in animation */
+    
+}
+
+/* Container-specific media queries */
+@media (max-width: 1900px) {
+    .container {
+      --item-width: 19%; /* 3 items per row */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      --item-width: 40%; /* 2 items per row */
+    }
+  }
+  
+
+
+
+.container .collectionMovies .movieData img{
+    width:100%;
+    margin: 5%;
+    border: 1px solid rgba(244, 175, 26, 0.211);
+    opacity: 0;                  /* Start fully transparent */
+    transform: translateY(30px); /* Start slightly below the final position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in animation */
+}
+
+.button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.moreinfo{
+    background-color: rgb(119, 47, 14);
+    color: aliceblue;
+    border: none;
+    padding: 3% 6%;
+    font-size: 1.2rem;
+    margin: 3%;
+}
+#prevPage{
+    background-color: rgb(119, 47, 14);
+    color: aliceblue;
+    border: none;
+    padding: 1% 2%;
+    font-size: 1.2rem;
+    margin: 3%;
+}
+#nextPage{
+    background-color: rgb(119, 47, 14);
+    color: aliceblue;
+    border: none;
+    padding: 1% 2%;
+    font-size: 1.2rem;
+    margin: 3%;
+}
+
+.search{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;                  /* Start fully transparent */
+    transform: translateY(30px); /* Start slightly below the final position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in animation */
+}
+.search input{
+    width:80%;
+    padding: 1% 2%;
+    font-size: 1.2rem;
+    border: none;
+
+}
+
+.search button{
+    background-color: rgb(119, 47, 14);
+    color: aliceblue;
+    border: none;
+    padding: 1% 2%;
+    font-size: 1.2rem;
+    margin: 1%;
+}
+
+.modal{         
+    display: none;    
+}
+
+.modalShow{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    height: 80%;
+    width: 50%;
+    background-color: rgb(5, 14, 21);
+    padding: 1%;
+    gap: 1%;
+
+}
+
+.modalShow .poster img{
+   width:auto;
+    height:100%;
+    opacity: 0;                  /* Start fully transparent */
+    transform: translateY(30px); /* Start slightly below the final position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in animation */
+}
+
+.modalShow .detailspart {
+    width: 70%;
+}
+.modalShow .detailspart .modalhead{
+    width: 100%;
+    display: flex;    
+    justify-content: space-between;
+    border-bottom: 3px solid rgba(244, 175, 26, 0.211) ;
+    opacity: 0;                  /* Start fully transparent */
+    transform: translateY(30px); /* Start slightly below the final position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in animation */
+}
+
+.modalShow .detailspart .modalhead .close{    
+    margin: 2%;
+    cursor: pointer;
+}
+
+.modalShow .detailspart .modalhead .title{
+        margin: 2%;
+    
+}
+.modalShow .detailspart .details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    row-gap: 5%;
+    padding: 2% 3%;
+    opacity: 0;                  /* Start fully transparent */
+    transform: translateY(30px); /* Start slightly below the final position */
+    animation: fadeInUp 1.5s ease forwards; /* Trigger the fade-in animation */
+}
+
+.modalShow .detailspart .details h3{
+    margin: 2%;
+    font-size: 2rem;
+    color:rgba(244, 175, 26, 0.808)
+    
+}
+
+.modalShow .detailspart .details h4{
+    margin: 2%;
+    font-size: 1.2rem;
+    
+}
+
+.modalShow .detailspart .details h5{
+    margin: 2%;
+    font-size: 1rem;
+    
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;               /* End fully visible */
+        transform: translateY(0); /* End in the final position */
+    }
+}

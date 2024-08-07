@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="MovieSearchApp.css">
+</head>
+
+<body>
+
+    <div class="search">
+        <input type="text" placeholder="Search Movie" id="search">
+        <button onclick="searchmovieFun()">Search</button>
+    </div>
+
+
+    <div class="container">
+        <div class="collectionMovies" id="collectionMovies">
+        </div>
+        <div class="button">
+            <button id="prevPage">
+                << Previous</button>
+                    <button id="nextPage">Next >></button>
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="poster">
+            <img src="" id="posterImg">
+        </div>
+        <div class="detailspart" id="detailspart">
+            <div class="modalhead">
+                <div class="title" id="title"></div>
+                <div class="close" id="close">X</div>
+            </div>
+            <div class="details" id="details">
+
+            </div>
+        </div>
+    </div>
+    <script src="MovieSearchApp.js"></script>
+</body>
+
+</html>
