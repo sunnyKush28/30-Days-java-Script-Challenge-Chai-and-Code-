@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  padding: 2% 10%;
+  background-color: #244855;
+  font-weight: 600;
+  color: #fbe9d0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.taskform {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.container .taskform h1 {
+  text-align: center;
+  margin-bottom: 1%;
+  font-size: 3rem;
+}
+.container .taskform form {
+  width: 100%;
+}
+
+.container .taskform .input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1%;
+}
+.container .taskform .input input {
+  width: 30%;
+  padding: 0.5% 0.5%;
+  margin-bottom: 1%;
+  border: none;
+  transition: 0.3s ease, border-bottom 0.3s ease;
+}
+
+.container .taskform .buttonSubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .taskform .buttonSubmit button {
+  background-color: #e64833;
+  border: none;
+  padding: 0.5% 3%;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #244855;
+}
+
+.container .taskShow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbe9d028;
+  font-size: 1.2rem;
+  margin-top: 2%;
+  padding: 3% 0%;
+}
+
+.container .taskShow table {
+  width: 85%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.container .taskShow table,
+thead th,
+tr,
+td {
+  border: 1px solid #fbe9d057;
+  padding: 1% 2%;
+}
+
+.container .taskShow table thead th,
+tr {
+  margin: 0%;
+  padding: 1% 2%;
+  text-wrap: nowrap;
+}
+
+.container .taskShow table thead {
+  background-color: #e64833;
+}
+.container .taskShow table tbody tr td select {
+  background-color: #fbe9d057;
+  border: none;
+  color: #fbe9d0;
+  font-size: 1.2rem;
+  padding: 1% 10%;
+}
+
+.container .taskShow table tbody tr td select option {
+  background-color: #244855;
+  padding: 1% 1%;
+  margin-bottom: 1%;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.edit {
+  background-color: #244855;
+  padding: 6% 6%;
+  font-size: 1.1rem;
+  color: #d4ca39;
+  border: none;
+}
+
+.deleteBtn {
+  background-color: #e64833;
+  padding: 6% 6%;
+  font-size: 1.1rem;
+  border: none;
+}
+.delete {
+  background-color: #e64833;
+  padding: 6% 6%;
+  font-size: 1.1rem;
+  border: none;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #244855;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2% 5%;
+  border-radius: 10px;
+  row-gap: 5%;
+  box-shadow: 10px 15px 20px 10px #061c24;
+}
+
+.modal h4 {
+  font-size: 1.5rem;
+  margin-bottom: 5%;
+}
+
+#modeldiv .formEdit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  flex-direction: column;
+
+  gap: 5%;
+}
+
+#modeldiv .formEdit .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 15%;
+}
+
+#modeldiv .formEdit .input input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 15%;
+  margin-bottom: 2%;
+  padding: 1.5% 4%;
+  border: none;
+}
+
+.modalUpdate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #244855;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2% 3%;
+  border-radius: 10px;
+  row-gap: 3%;
+  box-shadow: 10px 15px 20px 10px #061c24;
+}
+
+.closeUpdate {
+  background-color: #244855;
+  padding: 1% 3%;
+  font-size: 1.3rem;
+  color: #d4ca39;
+  border: none;
+}
+
+.container .taskform .buttonSubmit button,
+.edit,
+.deleteBtn,
+.delete {
+  background-color: #e64833;
+  border: none;
+  padding: 0.5% 5%;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #244855;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.container .taskform .buttonSubmit button:hover,
+.edit:hover,
+.deleteBtn:hover,
+.delete:hover {
+  background-color: #d4402c;
+  transform: scale(1.05);
+}
+
+.container .taskform .input input:focus {
+  background-color: #e0e0e0;
+  border-bottom: 2px solid #d4402c;
+}
